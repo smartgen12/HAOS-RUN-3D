@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAOS RUN 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div id="screen-flash"></div>
+    
+    <div id="ui-container">
+        <!-- Chaos Warning Banner -->
+        <div id="chaos-warning" class="hidden">⚠️ CHAOS SHIFT INCOMING! ⚠️</div>
+
+        <!-- Tutorial Hint Banner -->
+        <div id="tutorial-banner" class="hidden">💡 Use A/D or Left/Right to switch lanes, Space to jump, Shift to dash!</div>
+
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-item">Section: <span id="section-val">1</span>/3</div>
+            <div class="hud-item">Score: <span id="score-val">0</span> / 600</div>
+            <div class="hud-item">Health: <span id="health-val">❤️❤️❤️</span></div>
+            <div class="hud-item">Coins: <span id="coins-val">0</span></div>
+            <div class="hud-item">Time: <span id="timer-val">0:00</span></div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1>CHAOS RUN 3D</h1>
+            <p>Conquer 3 progressive sections, master Chaos Shifts, collect coins, and reach the finish line!</p>
+            <p>Best Score: <span id="best-score-val">0</span></p>
+            <button id="start-btn" class="btn">Start Adventure</button>
+            <div class="instructions">
+                <p><b>A / D</b> or <b>Left / Right</b>: Switch Lanes</p>
+                <p><b>Space / Up</b>: Jump | <b>Shift</b>: Dash (Invincible)</p>
+                <p><b>P</b>: Pause Game | <b>R</b>: Restart</p>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pause-screen" class="screen hidden">
+            <h2>Game Paused</h2>
+            <button id="resume-btn" class="btn" style="margin-bottom: 15px;">Resume Game</button>
+            <button id="menu-restart-btn" class="btn">Restart Run</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameover-screen" class="screen hidden">
+            <h2>Game Over</h2>
+            <p>You ran out of health in the chaos!</p>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <button id="restart-btn" class="btn">Try Again (Press R)</button>
+        </div>
+
+        <!-- Win Screen -->
+        <div id="win-screen" class="screen hidden">
+            <h2 style="color: #2ecc71;">VICTORY!</h2>
+            <p>You completed all 3 sections of CHAOS RUN 3D!</p>
+            <p>Final Score: <span id="win-score">600</span> | Coins: <span id="win-coins">0</span></p>
+            <p>Reward Unlocked: <b>GOLDEN CAP LEO!</b> 🏆</p>
+            <button id="win-restart-btn" class="btn">Play Again</button>
+        </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
